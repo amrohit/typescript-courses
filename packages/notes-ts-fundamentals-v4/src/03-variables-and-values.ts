@@ -4,6 +4,8 @@ let temperature = 6 //! inference
 // temperature = "warm"  //! type-checking
 // const humidity = 79  //! literal type
 
+// let x = 10 as 79; //! type assertion
+
 //* A type as a set of allowed values
 /*
 // temperature = 23 //✔️ (1)  - re-assignability of a let
@@ -15,7 +17,8 @@ let temperature = 6 //! inference
 
 /*
 // let temp2 = 19; //! temp2's type is { all numbers }
-// let humid2 = 79 as const; //! humidity's type is { 79 }
+// let temp = 79 as 79 // (temp can only accept 79)
+// let humid2 = 79 as const; //! humidity's type is { 79 } 
 // temp2 = 23; //! Is each member in { 23 } also in { all numbers }?
 // temp2 = humid2; //! Is each member in { 79 } also in { all numbers }?
 // humid2 = temp2; //! Is each member in { all numbers } also in { 79 }?
