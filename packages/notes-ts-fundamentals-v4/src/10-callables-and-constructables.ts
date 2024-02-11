@@ -105,4 +105,18 @@ const subtract: TwoNumberCalc = (x, y) => x - y
 //     })
 // }
 /**/
+
+function myClickHandler(this: HTMLButtonElement, event: Event) {
+  this.disabled  = true;
+}
+
+myClickHandler(new Event('click')); // X will not work
+
+const myButton = document.getElementsByTagName('button')[0];
+const boundHandler = myClickHandler.bind(myButton);
+boundHandler(new Event('click'));
+myClickHandler.call(myButton, new Event('click'));
+myClickHandler.apply(myButton, [new Event('click')]);
+
+
 export default {}
